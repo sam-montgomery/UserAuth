@@ -3,6 +3,7 @@ import pyodbc
 #Drivers Available:
 #['SQL Server', 'Microsoft Access Driver (*.mdb, *.accdb)', 'Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)', 'Microsoft Access Text Driver (*.txt, *.csv)', 'SQL Server Native Client 11.0', 'SQL Server Native Client RDA 11.0', 'ODBC Driver 17 for SQL Server']
 
+
 def authenticate(conn, username, password):
     print(f"Authenticating combination for {conn}")
     query = f"SELECT Password FROM Authentication WHERE Username='{username}';"
