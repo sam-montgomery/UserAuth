@@ -1,5 +1,5 @@
 import pyodbc
-#Class created to provide 5 username and password combinations to the database.
+#Script created to provide 5 username and password combinations to the database.
 conn_string = "driver={SQL SERVER}; server=DESKTOP-3RAD00Q; database=UserAuth; trusted_connection=YES;"
 
 connection = pyodbc.connect(conn_string)
