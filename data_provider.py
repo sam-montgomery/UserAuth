@@ -15,3 +15,5 @@ def create_account(conn, username, password):
     
 for i in range(0, 5):
     create_account(connection, user_names[i], pass_words[i])
+    
+connection.close()

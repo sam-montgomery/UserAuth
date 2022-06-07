@@ -1,3 +1,5 @@
+import colorama
+from colorama import Fore
 import pyodbc
 
 #Drivers Available:
@@ -5,7 +7,6 @@ import pyodbc
 
 
 def authenticate(conn, username, password):
-    print(f"Authenticating combination for {conn}")
     query = f"SELECT Password FROM Authentication WHERE Username='{username}';"
     cursor = conn.cursor()
     cursor.execute(query)
@@ -18,6 +19,18 @@ conn_string = "driver={SQL SERVER}; server=DESKTOP-3RAD00Q; database=UserAuth; t
 
 connection = pyodbc.connect(conn_string)
 
-print(authenticate(connection, 'TestUser', 'Testpass'))
+print('User Authentication- ')
+username = input("Username: ")
+password = input("Password: ")
 
+print("Please await authentication.")
+
+res = authenticate(connection, username, password)
+
+if res: 
+    print(Fore.GREEN + "Authentication Successful")
+else:
+    print(Fore.RED + "Authentication Unsuccessful")
+    
+print(Fore.WHITE)
 connection.close()
